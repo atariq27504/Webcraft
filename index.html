@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hjem | Webfirma AS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header .logo img {
+            height: 80px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+        .hero {
+            background: url('hero-background.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 15%;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: 4em;
+            z-index: 1;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            z-index: 1;
+        }
+        .about-section {
+            padding: 50px 10%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .about-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .faq-section {
+            padding: 50px 10%;
+            background-color: #f1f1f1;
+        }
+        .faq-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        .faq-item h3 {
+            font-size: 1.8em;
+            color: #333;
+            padding: 15px 20px;
+            background-color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .faq-item p {
+            font-size: 1.2em;
+            color: #555;
+            padding: 20px;
+            display: none; /* skjuler svaret som standard */
+        }
+        .faq-item .arrow {
+            width: 20px;
+            height: 20px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #333;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active p {
+            display: block; /* viser svaret når aktiv */
+        }
+        .faq-item.active .arrow {
+            transform: rotate(180deg);
+        }
+        .cta-section {
+            background-color: #00bcd4;
+            color: white;
+            text-align: center;
+            padding: 50px 10%;
+        }
+        .cta-section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+        .cta-section a {
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .cta-section a:hover {
+            background-color: #00bcd4;
+            color: #333;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo.png.jpg" alt="Webfirma Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="tjenester.html">Tjenester</a></li>
+                <li><a href="about%20us.html">Om oss</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>"Ta steget inn i en digital fremtiden"</h1>
+    </section>
+    <section class="about-section">
+        <h2>Hvem er vi?</h2>
+        <p>Vi er et team med lidenskap for digital innovasjon. Webfirma AS ble grunnlagt med et mål om å tilby topp moderne nettsider, applikasjoner og digital markedsføring til både små og store bedrifter. Vårt team består av erfarne utviklere, designere og markedsføringsspesialister som jobber sammen for å gjøre våre kunders visjoner til virkelighet.</p>
+        <p> Vi skaper løsninger som er både visuelt imponerende og funksjonelle. Vi streber etter å levere resultater som virkelig gir verdi for våre kunder.</p>
+    </section>
+    <section class="faq-section">
+        <h2>Vanlige spørsmål</h2>
+        <div class="faq-item">
+            <h3 class="faq-item-header">Hva slags tjenester tilbyr dere? <div class="arrow"></div></h3>
+            <p>Vi tilbyr en rekke digitale tjenester, inkludert webdesign, app-utvikling, SEO-optimalisering og digital markedsføring. Våre tjenester er skreddersydd for å møte behovene til både små og store bedrifter.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-item-header">Hvordan kan vi kontakte dere? <div class="arrow"></div></h3>
+            <p>Du kan kontakte oss via vårt kontaktskjema på nettsiden eller sende oss en e-post på <strong>info@webfirma.no</strong>. Vi svarer vanligvis innen 24 timer på hverdager.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-item-header">Hvor lang tid tar det å lage en nettside? <div class="arrow"></div></h3>
+            <p>Tiden det tar å lage en nettside avhenger av prosjektets kompleksitet. Enkle nettsider kan være ferdig på 2-3 uker, mens mer komplekse nettsider kan ta 1-2 måneder. Vi gir en estimert tidsramme før vi starter på prosjektet.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-item-header">Hva er SEO, og hvorfor er det viktig? <div class="arrow"></div></h3>
+            <p>SEO står for søkemotoroptimalisering, og det er prosessen med å forbedre nettsidens synlighet på søkemotorer som Google. SEO er viktig fordi det hjelper din nettside å bli funnet av potensielle kunder, noe som kan føre til økt trafikk og salg.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-item-header">Er det mulig å få hjelp med markedsføring? <div class="arrow"></div></h3>
+            <p>Ja! Vi tilbyr digital markedsføring, inkludert betalt annonsering (Google Ads, Facebook Ads), innholdsmarkedsføring og e-postmarkedsføring. Vi kan hjelpe deg med å tiltrekke flere kunder og forbedre merkevarens synlighet online.</p>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Er du klar for å ta virksomheten din til neste nivå?</h2>
+        <a href="kontakt.html">Kom i kontakt med oss</a>
+    </section>
+    <footer>&copy; 2024 WebCraft. Alle rettigheter reservert.</footer>
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const header = item.querySelector('h3');
+            header.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

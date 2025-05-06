@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tjenester | Webfirma AS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header .logo img {
+            height: 80px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+        .hero {
+            background-color: #555; /* Gray color */
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .services-section {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        .service-card h3 {
+            font-size: 1.75em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .service-card p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .why-choose-us {
+            background-color: #00bcd4;
+            padding: 60px 10%;
+            color: white;
+            text-align: center;
+        }
+        .why-choose-us h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .why-choose-us p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .startup-packages {
+            padding: 60px 10%;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .startup-packages h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .package-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .package-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-header h3 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #00bcd4;
+        }
+
+        .package-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #777;
+        }
+
+        .package-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0097a7;
+        }
+
+        @media (max-width: 768px) {
+            .startup-packages {
+                padding: 40px 5%;
+            }
+
+            .package-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .package-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        footer nav ul li a:hover {
+            color: #00bcd4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo.png.jpg" alt="Webfirma Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="tjenester.html">Tjenester</a></li>
+                <li><a href="about%20us.html">Om oss</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Våre tjenester</h1>
+    </section>
+
+    <section class="services-section">
+        <div class="service-card">
+            <h3>Profesjonell nettsidedesign</h3>
+            <p>Vi tilbyr responsive og moderne nettsider som skiller seg ut og gir et sterkt førsteinntrykk.</p>
+        </div>
+        <div class="service-card">
+            <h3>SEO-optimalisering</h3>
+            <p>Optimaliser nettsiden din for å nå høyere rangeringer på Google og tiltrekke flere besøkende.</p>
+        </div>
+        <div class="service-card">
+            <h3>Digital markedsføring</h3>
+            <p>Vi skaper målrettede markedsføringskampanjer for å styrke synligheten og øke salget ditt.</p>
+        </div>
+        <div class="service-card">
+            <h3>Logo-design</h3>
+            <p>Vi designer profesjonelle og minneverdige logoer som representerer merkevaren din på best mulige måte.</p>
+        </div>
+        <div class="service-card">
+            <h3>Nettsideutvikling</h3>
+            <p>Vi bygger skreddersydde nettsider som er både brukervennlige og funksjonelle, tilpasset dine behov.</p>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <h2>Hvorfor velge oss?</h2>
+        <p>Webfirma AS er eksperter på nettsideutvikling, med et sterkt fokus på kvalitet og kundetilfredshet. Vi skaper løsninger som er skreddersydde for dine behov og sørger for at du får den digitale tilstedeværelsen din til å skinne.</p>
+        <p>Vårt erfarne team av designere og utviklere jobber tett sammen med deg for å forstå din visjon og oversette den til en imponerende nettside som ikke bare ser bra ut, men også leverer på funksjonalitet.</p>
+    </section>
+
+    <section class="startup-packages">
+        <h2>Våre oppstartspakker</h2>
+        <div class="package-cards">
+            <div class="package-card">
+                <div class="card-header">
+                    <h3>Grunnpakke</h3>
+                    <p class="price">3000,-/</p>
+                </div>
+                <p>Enkel nettside med grunnleggende funksjoner, perfekt for små bedrifter og personlige prosjekter.</p>
+                <ul>
+                    <li>Inkluderer oppstartsmøte på 1 time</li>
+                    <li>Skreddersydd design for din bedrift</li>
+                    <li>1 enkel nettside som gir maksimal effekt</li>
+                   
+                </ul>
+            </div>
+            <div class="package-card">
+                <div class="card-header">
+                    <h3>Profesjonell pakke</h3>
+                    <p class="price">5000,-/</p>
+                </div>
+                <p>En mer avansert nettside med skreddersydd design og funksjonalitet for profesjonelle virksomheter.</p>
+                <ul>
+                    <li>Inkluderer oppstartsmøte på 1 time</li>
+                    <li>Skreddersydd design for din bedrift</li>
+                    <li>5 + sider i nettsiden som gir maksimal effekt</li>
+                   
+             </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 WebCraft. Alle rettigheter reservert.</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="tjenester.html">Tjenester</a></li>
+                    <li><a href="om-oss.html">Om oss</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
+
+
