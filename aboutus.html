@@ -28,10 +28,16 @@
         header .logo img {
             height: 80px;
         }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
         nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
+            margin-right: 20px;
         }
         nav ul li a {
             text-decoration: none;
@@ -44,7 +50,7 @@
             color: #00bcd4;
         }
         .hero {
-            background-color: #555;   /*dudffudiuoigfiiiiiiii*/
+            background-color: #555;
             height: 60vh;
             display: flex;
             align-items: center;
@@ -153,6 +159,7 @@
                 <li><a href="about%20us.html">About Us</a></li>
                 <li><a href="kontakt.html">Contact</a></li>
             </ul>
+            <div id="google_translate_element"></div>
         </nav>
     </header>
 
@@ -173,11 +180,11 @@
     <section class="values">
         <h2>Our Values</h2>
         <ul>
-            <li> We always deliver solutions of the highest standard ✅</li>
-            <li> We create the digital solutions of the future, tailored to today’s needs ✅</li>
-            <li> We work closely with our clients to achieve success and maximum value ✅</li>
-            <li> We integrate sustainability into all our processes to contribute to a better future ✅</li>
-            <li> We promote a creative and inclusive work environment that inspires innovation ✅</li>
+            <li>We always deliver solutions of the highest standard ✅</li>
+            <li>We create the digital solutions of the future, tailored to today’s needs ✅</li>
+            <li>We work closely with our clients to achieve success and maximum value ✅</li>
+            <li>We integrate sustainability into all our processes to contribute to a better future ✅</li>
+            <li>We promote a creative and inclusive work environment that inspires innovation ✅</li>
         </ul>
     </section>
 
@@ -207,6 +214,20 @@
     </section>
 
     <footer>&copy; 2024 WebCraft. All rights reserved.</footer>
+
+    <!-- Google Translate -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'no',
+          includedLanguages: 'en,fr,sv,zh-CN,no',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" 
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
 </body>
 </html>
 
