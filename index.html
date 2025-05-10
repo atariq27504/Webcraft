@@ -1,88 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Webfirma AS</title>
+    <title>Hjem | Webfirma AS</title>
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
             color: #333;
         }
-
         header {
-            background-color: #003366;
+            background-color: #333;
             color: white;
-            padding: 1rem 2rem;
+            padding: 20px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .logo img {
-            height: 50px;
+        header .logo img {
+            height: 80px;
         }
-
         nav ul {
             list-style: none;
             display: flex;
-            gap: 1rem;
-            margin: 0;
-            padding: 0;
+            gap: 20px;
         }
-
         nav ul li a {
-            color: white;
             text-decoration: none;
-            font-weight: bold;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
         }
-
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
         .hero {
-            background-color: #006699;
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .about-us, .values, .team-section {
-            padding: 2rem;
-            background-color: white;
-            margin: 1rem auto;
-            max-width: 1000px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .values ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .values ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .team-grid {
+            background: url('hero-background.jpg') no-repeat center center/cover;
+            height: 80vh;
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 15%;
+            position: relative;
         }
-
-        .team-member {
-            background-color: #f0f0f0;
-            padding: 1rem;
-            flex: 1 1 300px;
-            border-radius: 8px;
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
         }
-
-        footer {
-            background-color: #003366;
+        .hero h1 {
+            font-size: 4em;
+            z-index: 1;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            z-index: 1;
+        }
+        .about-section {
+            padding: 50px 10%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .about-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .faq-section {
+            padding: 50px 10%;
+            background-color: #f1f1f1;
+        }
+        .faq-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        .faq-item h3 {
+            font-size: 1.8em;
+            color: #333;
+            padding: 15px 20px;
+            background-color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .faq-item p {
+            font-size: 1.2em;
+            color: #555;
+            padding: 20px;
+            display: none; /* skjuler svaret som standard */
+        }
+        .faq-item .arrow {
+            width: 20px;
+            height: 20px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #333;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active p {
+            display: block; /* viser svaret når aktiv */
+        }
+        .faq-item.active .arrow {
+            transform: rotate(180deg);
+        }
+        .cta-section {
+            background-color: #00bcd4;
             color: white;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+            padding: 50px 10%;
+        }
+        .cta-section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+        .cta-section a {
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .cta-section a:hover {
+            background-color: #00bcd4;
+            color: #333;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
         }
     </style>
 </head>
