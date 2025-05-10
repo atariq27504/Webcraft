@@ -28,10 +28,16 @@
         header .logo img {
             height: 80px;
         }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
         nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
+            margin-right: 20px;
         }
         nav ul li a {
             text-decoration: none;
@@ -116,7 +122,7 @@
             font-size: 1.2em;
             color: #555;
             padding: 20px;
-            display: none; /* skjuler svaret som standard */
+            display: none;
         }
         .faq-item .arrow {
             width: 20px;
@@ -127,7 +133,7 @@
             transition: transform 0.3s ease;
         }
         .faq-item.active p {
-            display: block; /* viser svaret når aktiv */
+            display: block;
         }
         .faq-item.active .arrow {
             transform: rotate(180deg);
@@ -174,16 +180,20 @@
                 <li><a href="about%20us.html">Om oss</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
+            <div id="google_translate_element"></div>
         </nav>
     </header>
+
     <section class="hero">
         <h1>"Ta steget inn i en digital fremtiden"</h1>
     </section>
+
     <section class="about-section">
         <h2>Hvem er vi?</h2>
         <p>Vi er et team med lidenskap for digital innovasjon. Webfirma AS ble grunnlagt med et mål om å tilby topp moderne nettsider, applikasjoner og digital markedsføring til både små og store bedrifter. Vårt team består av erfarne utviklere, designere og markedsføringsspesialister som jobber sammen for å gjøre våre kunders visjoner til virkelighet.</p>
         <p> Vi skaper løsninger som er både visuelt imponerende og funksjonelle. Vi streber etter å levere resultater som virkelig gir verdi for våre kunder.</p>
     </section>
+
     <section class="faq-section">
         <h2>Vanlige spørsmål</h2>
         <div class="faq-item">
@@ -207,11 +217,14 @@
             <p>Ja! Vi tilbyr digital markedsføring, inkludert betalt annonsering (Google Ads, Facebook Ads), innholdsmarkedsføring og e-postmarkedsføring. Vi kan hjelpe deg med å tiltrekke flere kunder og forbedre merkevarens synlighet online.</p>
         </div>
     </section>
+
     <section class="cta-section">
         <h2>Er du klar for å ta virksomheten din til neste nivå?</h2>
         <a href="kontakt.html">Kom i kontakt med oss</a>
     </section>
+
     <footer>&copy; 2024 WebCraft. Alle rettigheter reservert.</footer>
+
     <script>
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
@@ -221,6 +234,21 @@
             });
         });
     </script>
+
+    <!-- Google Translate -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'no',
+          includedLanguages: 'en,fr,sv,zh-CN,no',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" 
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
 </body>
 </html>
+
 
