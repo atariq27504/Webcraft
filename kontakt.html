@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="no">  
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | Webfirma AS</title>
+    <title>Tjenester | Webfirma AS</title>
     <style>
         * {
             margin: 0;
@@ -11,18 +11,18 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
             color: #333;
         }
         header {
             background-color: #333;
             color: white;
-            padding: 40px 10%;
+            padding: 30px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header .logo img {
             height: 80px;
@@ -30,7 +30,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
         nav ul li a {
             text-decoration: none;
@@ -43,88 +43,206 @@
             color: #00bcd4;
         }
         .hero {
-            background-color: #555; /* Grå bakgrunn istedenfor bilde */
+            background-color: #555; /* Gray color */
             height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
-            padding: 0 10%;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
         }
         .hero h1 {
-            font-size: 3em;
+            font-size: 3.5em;
+            font-weight: 700;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
         }
-        .contact-form {
-            max-width: 700px;
-            margin: 50px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 10px;
         }
-        .contact-form h2 {
-            margin-bottom: 20px;
-            font-size: 2em;
-            color: #00bcd4;
+        .services-section {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
         }
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #333;
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
+        .service-card h3 {
+            font-size: 1.75em;
             margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
             color: #333;
         }
-        .contact-form button {
+        .service-card p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .why-choose-us {
+            background-color: #00bcd4;
+            padding: 60px 10%;
+            color: white;
+            text-align: center;
+        }
+        .why-choose-us h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .why-choose-us p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .startup-packages {
+            padding: 60px 10%;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .startup-packages h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .package-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .package-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            padding: 12px;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-header h3 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #00bcd4;
+        }
+
+        .package-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #777;
+        }
+
+        .package-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
             background-color: #00bcd4;
             color: white;
-            font-size: 1.2em;
             border: none;
-            cursor: pointer;
+            padding: 12px 25px;
+            font-size: 1.1em;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .contact-form button:hover {
+
+        .cta-button:hover {
             background-color: #0097a7;
         }
-        .extra-info {
-            margin-top: 30px;
-            text-align: center;
-            background-color: #f0f0f0;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+        @media (max-width: 768px) {
+            .startup-packages {
+                padding: 40px 5%;
+            }
+
+            .package-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .package-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
         }
-        .extra-info p {
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            color: #333;
-        }
-        .extra-info a {
-            color: #00bcd4;
-            text-decoration: none;
-            font-weight: 600;
-        }
+
+        /* Footer Styles */
         footer {
             background-color: #333;
             color: white;
+            padding: 20px 10%;
             text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+            margin-top: 40px;
         }
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        footer nav ul li a:hover {
+            color: #00bcd4;
+        }
+    </style>
 </head>
 <body>
     <header>
